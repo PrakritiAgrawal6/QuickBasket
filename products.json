@@ -1,0 +1,228 @@
+{
+  "users": [
+    {
+      "id": "6h34",
+      "fName": "Prakriti",
+      "lName": "Agrawal",
+      "email": "prakriti6agrawal@gmail.com",
+      "phNo": "9453618045",
+      "password": "prakriti123"
+    },
+    {
+      "id": "9P9L",
+      "fName": "Stuti",
+      "lName": "Agrawal",
+      "email": "stuti.agrawal@gmail.com",
+      "phNo": "9453898008",
+      "password": "XBKJui01&#"
+    },
+    {
+      "id": "e2b1",
+      "fName": "John",
+      "lName": "Gigel",
+      "email": "john12@gmail.com",
+      "phNo": "94522444408",
+      "password": "XBKJui01&#"
+    },
+    {
+      "id": "beec",
+      "fName": "John",
+      "lName": "Gigel",
+      "email": "john12@gmail.com",
+      "phNo": "94522444408",
+      "password": "XBKJui01&#"
+    },
+    {
+      "id": "786e",
+      "fName": "Shivani",
+      "lName": "Dixit",
+      "email": "shivani@gmail.com",
+      "phNo": "919863893",
+      "password": "shivani123"
+    },
+    {
+      "id": "839b",
+      "fName": "Akriti",
+      "lName": "Srivastava",
+      "email": "ak.sri@gmail.com",
+      "phNo": "9636386828",
+      "password": "akriti123"
+    },
+    {
+      "id": "0da0",
+      "fName": "Sanskriti",
+      "lName": "Yadav",
+      "email": "ak.sri@gmail.com",
+      "phNo": "9636386828",
+      "password": "akriti123"
+    },
+    {
+      "id": "a4ad",
+      "fName": "Narendra",
+      "lName": "Upahyaya",
+      "email": "narendraji@gmail.com",
+      "phNo": "9453618045",
+      "password": "narendra12"
+    },
+    {
+      "id": "a803",
+      "email": "narendraji@gmail.com",
+      "password": "narendra12"
+    }
+  ],
+  "categories": [
+    {
+      "id": "ced7",
+      "name": "furniture"
+    },
+    {
+      "id": "48g6",
+      "name": "beauty"
+    },
+    {
+      "id": "4133",
+      "name": "mouse"
+    },
+    {
+      "id": "7dde",
+      "name": "keyboards"
+    },
+    {
+      "id": "5c2a",
+      "name": "jewellery"
+    },
+    {
+      "id": "7e7e",
+      "name": "stationary"
+    },
+    {
+      "id": "6afd",
+      "name": "makeup"
+    }
+  ],
+  "products": [
+    {
+      "id": "c9e8",
+      "name": "Wireless keyboard",
+      "desc": "Black colored keyboard HP",
+      "price": 12.23,
+      "categoryId": "7dde",
+      "qty": 4
+    },
+    {
+      "id": "68e8",
+      "name": "Wireless mouse",
+      "desc": "Black colored mouse HP",
+      "price": 8.23,
+      "categoryId": "4133",
+      "qty": 8
+    },
+    {
+      "id": "b9e8",
+      "name": "Wired mouse",
+      "desc": "Black colored mouse HP",
+      "price": 4.23,
+      "categoryId": "4133",
+      "qty": 8
+    },
+    {
+      "id": "cf32",
+      "name": "Dell mouse",
+      "desc": "silver color mouse",
+      "price": 4.5,
+      "categoryId": "4133",
+      "qty": 4
+    },
+    {
+      "id": "fb36",
+      "name": "Apple keyboard",
+      "desc": "white colored apple keyboard",
+      "price": 23.4,
+      "categoryId": "7dde",
+      "qty": 6
+    },
+    {
+      "id": "ec22",
+      "name": "Apple mouse",
+      "desc": "white colored apple mouse",
+      "price": 134,
+      "categoryId": "4133",
+      "qty": 5
+    },
+    {
+      "id": "4992",
+      "name": "Travelmate keyboard",
+      "desc": "good keyboard with different color",
+      "price": 7.6,
+      "categoryId": "7dde",
+      "qty": 10
+    },
+    {
+      "id": "4922",
+      "name": "Round wooden table",
+      "desc": "Round dining table 4 seater Wooden",
+      "price": 17.6,
+      "categoryId": "ced7",
+      "qty": 10
+    },
+    {
+      "id": "49f3",
+      "name": "Diamond Hoop Earrings",
+      "desc": "Stellar Dainty Diamond Hoop Earrings where sophistication meets sparkle",
+      "price": 57.6,
+      "categoryId": "5c2a",
+      "qty": 6
+    },
+    {
+      "id": "12f3",
+      "name": "Entwine Classic Amber Pendant",
+      "desc": "A slender yellow gold chain necklace adorned with a vibrant pendant",
+      "price": 77.6,
+      "categoryId": "5c2a",
+      "qty": 5
+    },
+    {
+      "id": "2d75",
+      "name": "SUGAR Mettle Satin Lipstick",
+      "desc": "A premium and highly pigmented lipstick",
+      "price": 8.3,
+      "categoryId": "48g6",
+      "qty": 12
+    },
+    {
+      "id": "efd2",
+      "name": "eyeliner",
+      "desc": "to beautify your eyes",
+      "price": 12,
+      "categoryId": "6afd",
+      "qty": 11
+    }
+  ],
+  "orders": {
+    "Order_id": 1,
+    "products": [
+      {
+        "prodId": "c9e8",
+        "qty": 2
+      },
+      {
+        "prodId": "b9e8",
+        "qty": 1
+      }
+    ]
+  },
+  "cart": [
+    {
+      "id": "cf32",
+      "name": "Dell mouse",
+      "price": 4.5,
+      "qty": 2
+    },
+    {
+      "id": "fb36",
+      "name": "Apple keyboard",
+      "price": 23.4,
+      "qty": 1
+    }
+  ]
+}
