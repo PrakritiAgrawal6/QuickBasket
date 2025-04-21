@@ -2,18 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToCart } from "../redux/actions/cartAction";
-export interface IProduct {
-  id: string;
-  name: string;
-  desc: string;
-  price: number;
-  categoryId: string;
-  qty: number;
-}
-export interface ICategory {
-  id: string;
-  name: string;
-}
+import { IProduct, ICategory } from "../common/interfaces";
+
 const Products: React.FC = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState<Array<IProduct>>([]);
@@ -64,11 +54,15 @@ const Products: React.FC = () => {
   };
 
   return (
-    <>
-      {/*Dropdown part */}
-      <h2 >Products Available - {product.length}</h2>
-      <div>
-        <select value={filteredCtg} onChange={handleFilterChange}>
+    <div className="p-4">
+      {/* Dropdown part */}
+      <h2 className="text-2xl font-bold mb-4">Products Available - {product.length}</h2>
+      <div className="mb-4">
+        <select
+          value={filteredCtg}
+          onChange={handleFilterChange}
+          className="p-2 border border-gray-300 rounded"
+        >
           <option value="all">All</option>
           {categories.map((category) => (
             <option key={category.id} value={category.id}>
@@ -77,23 +71,30 @@ const Products: React.FC = () => {
           ))}
         </select>
       </div>
-      {/*Product display part */}
-      <div className="products">
-        {FilteredPet.map((product: IProduct) => {
-          return (
-            <div className="item" key={product.id}>
-              <div className="pd-name">Product Name - {product.name}</div>
-              <div>Product Id - {product.id}</div>
-              <div>Product Qty - {product.qty}</div>
-              <button onClick={() => redirect(product?.id)}>
-                Product details
-              </button>
-              <button onClick={() => addToCart1(product)}>Add to Cart</button>
-            </div>
-          );
-        })}
+      {/* Product display part */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {FilteredPet.map((product: IProduct) => (
+          <div key={product.id} className="bg-white shadow-md rounded-lg p-4">
+            <div className="font-semibold text-lg mb-2">{product.name}</div>
+            <div className="text-gray-600 mb-2">Product Id - {product.id}</div>
+            <div className="text-gray-600 mb-2">Product Qty - {product.qty}</div>
+            <button
+              onClick={() => redirect(product?.id)}
+              className="bg-blue-500 text-white px-4 py-2 rounded mr-2 hover:bg-blue-600"
+            >
+              Details
+            </button>
+            <button
+              onClick={() => addToCart1(product)}
+              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            >
+              Add to Cart
+            </button>
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
+
 export default Products;

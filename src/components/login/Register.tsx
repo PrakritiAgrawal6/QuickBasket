@@ -1,24 +1,8 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as yup from "yup";
 import axios from 'axios';
-
-export interface IUser {
-  id?: string;
-  fName: string;
-  lName: string;
-  email: string;
-  phNo: number | null;
-  password: string;
-}
-
-const handleRegValidation = yup.object({
-  fName: yup.string().required("Enter first name").min(4).max(12),
-  lName: yup.string().required("Enter last name").min(4).max(12),
-  email: yup.string().required("Email required"),
-  phNo: yup.string().required("Phone no required").min(2).max(10),
-  password: yup.string().required("Enter password").min(2).max(10),
-});
+import { IUser } from "../common/interfaces";
+import { handleRegValidation } from "../common/validation";
 
 const Register: React.FC = () => {
    const handleSubmit = async (values: IUser, { resetForm }: any) => {
