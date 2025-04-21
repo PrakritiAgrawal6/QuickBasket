@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { IProduct } from "./Products";
+import { IProduct } from "../common/interfaces";
 
 const ProductDetails: React.FC = () => {
-  const {id} = useParams();
+  const { id } = useParams();
   const [details, setDetails] = useState<IProduct>();
   const navigate = useNavigate();
 
   const redirect = () => {
     navigate("/Products");
-  }
+  };
 
   useEffect(() => {
     getProductDetails(id);
@@ -22,16 +22,23 @@ const ProductDetails: React.FC = () => {
   };
 
   return (
-    <>
-    <div style={{border: '2px solid', margin: '20px'}}>
-      <div className="pd-name">Product Details</div>
-      <div><h2>Product Name - {details?.name}</h2></div>
-      <div>{details?.desc}</div>
-      <div>Product Id - {details?.id}</div>
-      <div>Product Qty - {details?.qty}</div>
+    <div className="p-4">
+      <div className="border-2 border-gray-300 rounded-lg p-4 mb-4">
+        <h2 className="text-2xl font-bold mb-4">Product Details</h2>
+        <div className="mb-2">
+          <h3 className="text-xl font-semibold">Product Name - {details?.name}</h3>
+        </div>
+        <div className="text-gray-600 mb-2">{details?.desc}</div>
+        <div className="text-gray-600 mb-2">Product Id - {details?.id}</div>
+        <div className="text-gray-600 mb-2">Product Qty - {details?.qty}</div>
+      </div>
+      <button
+        onClick={redirect}
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      >
+        Back
+      </button>
     </div>
-    <button onClick={redirect}>Back</button>
-    </>
   );
 };
 

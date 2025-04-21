@@ -1,5 +1,5 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from "../../../utility"
-import { IProduct } from "../../product/Products"
+import { IProduct } from "../../common/interfaces"
 
 export const addToCart = (product: IProduct) => {
     return{
