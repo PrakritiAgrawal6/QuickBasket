@@ -2,11 +2,8 @@ import axios from "axios";
 import { Field, Formik, Form, ErrorMessage } from "formik";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import * as yup from "yup";
-
-const handleValidation = yup.object({
-  category: yup.string().required("Enter category name").min(2).max(20),
-});
+import { toast } from "react-toastify";
+import { ctghandleValidation } from "../common/validation";
 
 const AddCategories: React.FC = () => {
   const navigate = useNavigate();
@@ -14,6 +11,7 @@ const AddCategories: React.FC = () => {
   const redirect = () => {
     navigate("/Seller");
   };
+
   const handleSubmit = async (value: any, { resetForm }: any) => {
     try {
       const response = await axios.post("http://localhost:8080/categories", {
@@ -24,31 +22,48 @@ const AddCategories: React.FC = () => {
       console.log("Category not added!");
     }
     resetForm();
-    alert("Category added!");
+    toast("Category added!");
   };
+
   return (
-    <>
-      <div>
-        <h2>AddCategories</h2>
-        <button onClick={redirect}>Back</button>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-2xl font-bold">Add Categories</h2>
+          <button
+            onClick={redirect}
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
+            Back
+          </button>
+        </div>
+        <Formik
+          initialValues={{ category: "" }}
+          onSubmit={handleSubmit}
+          validationSchema={ctghandleValidation}
+        >
+          <Form className="space-y-4">
+            <div>
+              <label className="block text-gray-700">New Category</label>
+              <Field
+                type="text"
+                name="category"
+                className="w-full p-2 border border-gray-300 rounded"
+              />
+              <div className="text-red-500">
+                <ErrorMessage name="category" />
+              </div>
+            </div>
+            <button
+              type="submit"
+              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+            >
+              Add
+            </button>
+          </Form>
+        </Formik>
       </div>
-      <br />
-      <Formik
-        initialValues={{ category: "" }}
-        onSubmit={handleSubmit}
-        validationSchema={handleValidation}
-      >
-        <Form>
-          <label>New Category </label>
-          <Field type="text" name="category" />
-          <div style={{ color: "red" }}>
-            <ErrorMessage name="category" />
-          </div>
-          <br />
-          <button type="submit">Add</button>
-        </Form>
-      </Formik>
-    </>
+    </div>
   );
 };
 

@@ -17,3 +17,8 @@ export const handleValidation = yup.object({
       .required("Password is required")
       .min(8, "Password must be at least 8 characters long"),
   });
+
+  //Add Categories
+export const ctghandleValidation = yup.object({
+    category: yup.string().required("Enter category name").min(2).max(20),
+  });
